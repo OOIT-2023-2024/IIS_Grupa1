@@ -6,6 +6,12 @@ public class Point {
 	private int y;
 	private boolean selected;
 	
+	public double distance(Point drugaTacka) {
+		int a = this.x - drugaTacka.getX();
+		int b = this.y - drugaTacka.y;
+		double distance = Math.sqrt(a*a+b*b);
+		return distance;
+	}
 	
 	//metode pristupa - public
 	// metode instance
