@@ -81,7 +81,7 @@ public class Test {
 		
 		
 		//Vezbe 4.
-		Point novaTacka = new Point(10,15);
+		Point novaTacka = new Point(10,15, true);
 		System.out.println(novaTacka.getX());
 		System.out.println(novaTacka.isSelected());
 		Point novaTacka2 = new Point(10,15, true);
@@ -89,7 +89,33 @@ public class Test {
 		Line novaLinija = new Line(novaTacka, novaTacka2);
 		//ovde sad nece biti null pointer exception
 		System.out.println(novaLinija.getStartPoint().getX());
-
+		
+		//pre redefinianja toString() metode izbacuje referencu
+		//nakon redefinisanja vraca (10,15)
+		System.out.println(novaTacka.toString());
+		//u pozadini poziva toString() iz klase Object ako nije definisana u Point
+		//ako jeste onda poziva tu metodu
+		System.out.println(novaTacka);
+		System.out.println(line1);
+		System.out.println(line1.toString());
+		
+		int a = 5;
+		int b = 5;
+		System.out.println(a == b);
+		//kod slozenih tipova == poredi reference
+		//vraca false zbog operatora new
+		System.out.println(novaTacka == novaTacka2);
+		//vraca true jer je pocetna tacka linije u stvari novaTacka
+		System.out.println(novaTacka == novaLinija.getStartPoint());
+		
+		//metoda equals() poredi po vrednosti ako je redefinisemo
+		//u npr klasi Point
+		//ako ne vraca proveru po referenci jer Object ne zna sta su 
+		//property tacke (Point)
+		System.out.println(novaTacka.equals(novaTacka2));
+		System.out.println(novaTacka.equals(novaTacka2));
+		
+		System.out.println(novaTacka.equals(novaLinija));
 	}
 
 }

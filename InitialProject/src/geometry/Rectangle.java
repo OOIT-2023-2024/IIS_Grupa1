@@ -56,5 +56,11 @@ public class Rectangle {
 		this.selected = selected;
 	}
 	
+	public String toString() {
+		return "Upper left point: " + upperLeftPoint 
+				+ ", width = " + width 
+				+ ", height = " + height;
+	}
+	
 	
 }

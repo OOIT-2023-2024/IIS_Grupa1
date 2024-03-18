@@ -27,6 +27,18 @@ public class Point {
 		return distance;
 	}
 	
+	public boolean equals(Object obj) {
+		
+		if(obj instanceof Point) { 
+			if(this.x == ((Point)obj).x && this.y == ((Point)obj).y
+					&& this.selected == ((Point)obj).selected)
+				return true;
+			return false;
+		}
+		return false;
+		
+	}
+	
 	//metode pristupa - public
 	// metode instance
 	public int getX() {
@@ -60,6 +72,11 @@ public class Point {
 
 	public void setSelected(boolean selected) {
 		this.selected = selected;
+	}
+	
+	//isti potpis kao i u klasi Object
+	public String toString() {
+		return "(" + this.x + "," + this.y+")";
 	}
 	
 	
