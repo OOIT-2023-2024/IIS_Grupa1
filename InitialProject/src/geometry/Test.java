@@ -66,6 +66,29 @@ public class Test {
 		line1.getEndPoint().setX((int)(line1.length() - 
 				line1.getStartPoint().getX()+
 				line1.getStartPoint().getY()));
+		
+		//Domaci
+		Rectangle rect1 = new Rectangle();
+		Point upperLeftPoint = new Point();
+		rect1.setUpperLeftPoint(upperLeftPoint);
+		rect1.getUpperLeftPoint().setX(10);
+		
+		
+		Point center = new Point();
+		Circle circle1 = new Circle();
+		circle1.setCenter(center);
+		circle1.getCenter().setX(rect1.getUpperLeftPoint().getX());
+		
+		
+		//Vezbe 4.
+		Point novaTacka = new Point(10,15);
+		System.out.println(novaTacka.getX());
+		System.out.println(novaTacka.isSelected());
+		Point novaTacka2 = new Point(10,15, true);
+		
+		Line novaLinija = new Line(novaTacka, novaTacka2);
+		//ovde sad nece biti null pointer exception
+		System.out.println(novaLinija.getStartPoint().getX());
 
 	}
 
