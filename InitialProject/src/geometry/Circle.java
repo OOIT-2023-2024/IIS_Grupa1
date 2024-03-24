@@ -26,6 +26,22 @@ public class Circle {
 		return 2*radius*Math.PI;
 	}
 	
+
+	public boolean equals(Object obj) {
+		if (obj instanceof Circle) {
+			Circle pomocna = (Circle) obj; 
+			if (this.center.equals(pomocna.center) && this.radius == pomocna.radius) 
+				return true; 
+			else
+				return false; 
+		} else
+			return false;
+	}
+
+	public boolean contains(int x, int y) {
+		Point sadrziTacku = new Point(x,y);
+		return (this.center.distance(sadrziTacku) <= this.radius);
+	}
 	
 	public Point getCenter() {
 		return center;
@@ -46,4 +62,7 @@ public class Circle {
 		this.selected = selected;
 	}
 	
+	public String toString() {
+		return "Center: " + center + ", radius = " + radius;
+	}
 }

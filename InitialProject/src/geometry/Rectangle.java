@@ -30,6 +30,24 @@ public class Rectangle {
 		return 2*width + 2*height;
 	}
 	
+	public boolean equals(Object obj) {
+		if(obj instanceof Rectangle) {
+			Rectangle pomocna = (Rectangle) obj;
+			if (this.upperLeftPoint.equals(pomocna.upperLeftPoint) && this.width == pomocna.width 
+					&& this.height == pomocna.height)
+				return true;
+			else 
+				return false;
+		} else
+			return false;
+	}
+
+	public boolean contains(int x, int y) {
+		return (x >= this.upperLeftPoint.getX() 
+				&& x <= this.upperLeftPoint.getX() + width
+				&& y >= this.upperLeftPoint.getY()
+				&& y <= this.upperLeftPoint.getY() + height);
+	}
 	
 	public Point getUpperLeftPoint() {
 		return upperLeftPoint;

@@ -27,6 +27,21 @@ public class Line {
 		return length;
 	}
 	
+	public boolean equals(Object obj) {
+		if (obj instanceof Line) {
+			Line pomocna = (Line) obj;
+			if (this.startPoint.equals(pomocna.startPoint) && this.endPoint.equals(pomocna.endPoint))
+				return true;
+			else 
+				return false;
+		} else 
+			return false;
+	}
+
+	public boolean contains(int x, int y) {
+		Point sadrziTacku = new Point(x,y);
+		return this.startPoint.distance(sadrziTacku) + this.endPoint.distance(sadrziTacku) - length() <= 2;
+	}
 	
 	public Point getStartPoint() {
 		return this.startPoint;
