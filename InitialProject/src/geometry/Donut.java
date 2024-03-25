@@ -40,5 +40,15 @@ public class Donut extends Circle {
 		this.innerRadius = innerRadius;
 	}
 	
+	//redefinise toString iz Circle
+	//da ne postoji u Circle redefinisao bi onu toString metodu
+	//iz klase Object
+	public String toString() {
+		//ako kazemo toString() dobijamo rekurziju
+		//zato treba reci super.toString()
+		return super.toString() + 
+				", innerRadius = "+innerRadius;
+	}
+	
 	
 }

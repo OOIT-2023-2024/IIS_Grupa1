@@ -130,8 +130,14 @@ public class Test {
 		Object donut3 = new Donut(novaTacka, 50, true);
 		//ova prva naredba ispod ne valja
 		//Donut donut4 = new Circle();
-		//moze jer sam downcast uradila
-		Donut donut4 = (Donut)circle1;
+		
+		//ne moze downcast da se uradi
+		//jer smo Circle circle1 kreirali sa new Circle
+		//a ne sa new Donut
+		//Donut donut4 = (Donut)circle1;
+		
+		Donut donut5 = new Donut(novaTacka, 50, 45, true);	
+		System.out.println(donut5);
 	}
 	
 	
