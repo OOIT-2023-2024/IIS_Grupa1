@@ -1,0 +1,44 @@
+package geometry;
+
+public class Donut extends Circle {
+	//nasledjuje center, radius i selected od Circle
+	private int innerRadius;
+
+	public Donut() {}
+	
+	//ovaj je vise demonstracije radi
+	public Donut(Point center, int radius,
+			boolean selected) {
+		//poziv konstruktora iz direktno nadređene klase - super(...)
+		super(center, radius, selected);
+	}
+	
+	public Donut(Point center, int radius, 
+			int innerRadius) {
+		//super(center, radius, selected);
+		//umesto super mogu i 
+		super(center, radius);
+		this.innerRadius = innerRadius;
+	}
+	
+	public Donut(Point center, int radius, 
+			int innerRadius,
+			boolean selected) {
+		//super(center, radius, selected);
+		//umesto super mogu i 
+		this(center, radius, selected);
+		this.innerRadius = innerRadius;
+	}
+	
+	
+	//ostale get i set nasledjuje iz Circle
+	public int getInnerRadius() {
+		return innerRadius;
+	}
+
+	public void setInnerRadius(int innerRadius) {
+		this.innerRadius = innerRadius;
+	}
+	
+	
+}

@@ -116,6 +116,24 @@ public class Test {
 		System.out.println(novaTacka.equals(novaTacka2));
 		
 		System.out.println(novaTacka.equals(novaLinija));
+		
+		//Pete vezbe
+		novaTacka.contains(5, 10);
+		novaLinija.contains(5, 15);
+		rect1.contains(novaTacka2);
+		
+		
+		//ja kao korisnik znam da postoji tacka, radius, innerRadius, selected
+		//a ne da li je on krug ili nije
+		Donut donut1 = new Donut(novaTacka, 50, true);
+		Circle donut2 = new Donut(novaTacka, 50, true);
+		Object donut3 = new Donut(novaTacka, 50, true);
+		//ova prva naredba ispod ne valja
+		//Donut donut4 = new Circle();
+		//moze jer sam downcast uradila
+		Donut donut4 = (Donut)circle1;
 	}
+	
+	
 
 }

@@ -30,7 +30,10 @@ public class Circle {
 	public boolean equals(Object obj) {
 		if (obj instanceof Circle) {
 			Circle pomocna = (Circle) obj; 
-			if (this.center.equals(pomocna.center) && this.radius == pomocna.radius) 
+			if (this.center
+					.equals(pomocna.center) 
+					&& this.radius == pomocna.radius
+					&&  this.selected == pomocna.selected) 
 				return true; 
 			else
 				return false; 
@@ -40,7 +43,15 @@ public class Circle {
 
 	public boolean contains(int x, int y) {
 		Point sadrziTacku = new Point(x,y);
-		return (this.center.distance(sadrziTacku) <= this.radius);
+		return (this.center.
+				distance(sadrziTacku) <= this.radius);
+	}
+	
+	public boolean contains(Point sadrziTacku) {
+		//linija ispod je nepotrebna i nema smisla stavljati je ovde
+		//Point sadrziTacku = new Point(x,y);
+		return (this.center.
+				distance(sadrziTacku) <= this.radius);
 	}
 	
 	public Point getCenter() {

@@ -30,7 +30,8 @@ public class Point {
 	public boolean equals(Object obj) {
 		
 		if(obj instanceof Point) { 
-			if(this.x == ((Point)obj).x && this.y == ((Point)obj).y
+			if(this.x == ((Point)obj).x 
+					&& this.y == ((Point)obj).y
 					&& this.selected == ((Point)obj).selected)
 				return true;
 			return false;

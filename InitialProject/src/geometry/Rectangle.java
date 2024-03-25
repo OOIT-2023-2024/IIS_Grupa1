@@ -33,8 +33,11 @@ public class Rectangle {
 	public boolean equals(Object obj) {
 		if(obj instanceof Rectangle) {
 			Rectangle pomocna = (Rectangle) obj;
-			if (this.upperLeftPoint.equals(pomocna.upperLeftPoint) && this.width == pomocna.width 
-					&& this.height == pomocna.height)
+			if (this.upperLeftPoint
+					.equals(pomocna.upperLeftPoint) 
+					&& this.width == pomocna.width 
+					&& this.height == pomocna.height
+					&& this.selected == pomocna.selected)
 				return true;
 			else 
 				return false;
@@ -44,9 +47,21 @@ public class Rectangle {
 
 	public boolean contains(int x, int y) {
 		return (x >= this.upperLeftPoint.getX() 
-				&& x <= this.upperLeftPoint.getX() + width
+				&& x <= this.upperLeftPoint.getX() 
+				+ width
 				&& y >= this.upperLeftPoint.getY()
-				&& y <= this.upperLeftPoint.getY() + height);
+				&& y <= this.upperLeftPoint.getY()
+				+ height);
+	}
+	
+	//overloading demonstracija
+	public boolean contains(Point sadrziTacku) {
+		return (sadrziTacku.getX() >= this.upperLeftPoint.getX() 
+				&& sadrziTacku.getX() <= this.upperLeftPoint.getX() 
+				+ width
+				&& sadrziTacku.getY() >= this.upperLeftPoint.getY()
+				&& sadrziTacku.getY() <= this.upperLeftPoint.getY()
+				+ height);
 	}
 	
 	public Point getUpperLeftPoint() {
