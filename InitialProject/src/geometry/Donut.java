@@ -10,7 +10,20 @@ public class Donut extends Circle {
 	public Donut(Point center, int radius,
 			boolean selected) {
 		//poziv konstruktora iz direktno nadređene klase - super(...)
-		super(center, radius, selected);
+		super(center, radius);
+		
+		//select je protected pa moze ovako:
+		this.selected = selected;
+		/*super.selected = selected;
+		setSelected(selected);	
+		super.setSelected(selected);*/
+		
+		//ovo ne moze jer je center private: 
+		//this.center..
+		//super.center...
+		//ali moze
+		/*super.setCenter(center);
+		setCenter(center);*/
 	}
 	
 	public Donut(Point center, int radius, 
