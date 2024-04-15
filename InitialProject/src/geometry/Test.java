@@ -138,6 +138,11 @@ public class Test {
 		
 		Donut donut5 = new Donut(novaTacka, 50, 45, true);	
 		System.out.println(donut5);
+		
+		//Apstrakcija u programiranju
+		//Shape shape1 = new Shape();--nije dozvoljeno
+		Shape shape1 = new Point(15,25);
+		System.out.println(shape1.isSelected());
 	}
 	
 	

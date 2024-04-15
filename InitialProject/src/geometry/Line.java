@@ -1,13 +1,14 @@
 package geometry;
 
-public class Line {
+import java.awt.Graphics;
+
+public class Line extends Shape {
 	
 	//private int pocetnaTackaX;
 	//private int pocetnaTackaY;
 	//koristimo postojeći deo koda - ono gore ne treba
 	private Point startPoint;
 	private Point endPoint;
-	private boolean selected;
 	
 	public Line() {}
 	
@@ -49,6 +50,12 @@ public class Line {
 				- length() <= 2;
 	}
 	
+	@Override
+	public void draw(Graphics g) {
+		g.drawLine(startPoint.getX(), startPoint.getY(),
+				endPoint.getX(), endPoint.getY());		
+	}
+	
 	public Point getStartPoint() {
 		return this.startPoint;
 	}
@@ -76,6 +83,8 @@ public class Line {
 	public String toString() {
 		return startPoint.toString() + " --> " + endPoint; // (xS,yS) --> (xE,yE)
 	}
+
+
 	
 
 }
