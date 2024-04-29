@@ -2,6 +2,7 @@ package geometry;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Arrays;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -45,6 +46,22 @@ public class Drawing extends JPanel {
 		point2.moveTo(50, 60);
 		circle1.draw(g);
 		point2.draw(g);
+		
+		Point p3 = new Point(50, 50);
+		Rectangle r10 = new Rectangle(p3, 10, 10);
+		Rectangle r20 = new Rectangle(p3, 20, 20);
+		Rectangle r30 = new Rectangle(p3, 30, 30);
+		Rectangle[] rectangles = { r30, r10, r20 };
+		System.out.println("\nNesortiran niz: ");
+		for (int i = 0; i < rectangles.length; i++) {
+			System.out.println(rectangles[i]);
+		}
+		// u pozadini sortira po compareTo
+		Arrays.sort(rectangles);
+		System.out.println("Sortiran niz: ");
+		for (int i = 0; i < rectangles.length; i++) {
+			System.out.println(rectangles[i]);
+		}
 	}
 
 }
