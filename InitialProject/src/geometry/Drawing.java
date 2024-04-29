@@ -39,6 +39,12 @@ public class Drawing extends JPanel {
 		//iscrtaj centar kruga zelenom bojom
 		g.setColor(Color.green);
 		circle1.getCenter().draw(g);
+		
+		//7. vežbe
+		circle1.moveTo(100, 200);
+		point2.moveTo(50, 60);
+		circle1.draw(g);
+		point2.draw(g);
 	}
 
 }
