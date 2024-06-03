@@ -26,6 +26,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.JCheckBox;
+import javax.swing.JColorChooser;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextField;
 import java.awt.event.KeyAdapter;
@@ -279,6 +280,16 @@ public class FrmTest extends JFrame {
 			}
 		});
 		pnlSouth.add(btnIzmeniBoju);
+		
+		JButton btnBojaPozadine = new JButton("Boja pozadine");
+		btnBojaPozadine.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Color backColor = JColorChooser.showDialog(null, "Choose background color",Color.black);
+				if (backColor != null)
+					pnlCenter.setBackground(backColor);
+			}
+		});
+		pnlSouth.add(btnBojaPozadine);
 	}
 
 }
