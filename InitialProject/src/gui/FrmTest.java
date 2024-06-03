@@ -71,16 +71,16 @@ public class FrmTest extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
-		
+
 		JPanel pnlCenter = new JPanel();
 		contentPane.add(pnlCenter, BorderLayout.CENTER);
 		GridBagLayout gbl_pnlCenter = new GridBagLayout();
-		gbl_pnlCenter.columnWidths = new int[]{0, 0, 0, 0};
-		gbl_pnlCenter.rowHeights = new int[]{0, 0, 0, 0, 0};
-		gbl_pnlCenter.columnWeights = new double[]{1.0, 0.0, 1.0, Double.MIN_VALUE};
-		gbl_pnlCenter.rowWeights = new double[]{0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
+		gbl_pnlCenter.columnWidths = new int[] { 0, 0, 0, 0 };
+		gbl_pnlCenter.rowHeights = new int[] { 0, 0, 0, 0, 0 };
+		gbl_pnlCenter.columnWeights = new double[] { 1.0, 0.0, 1.0, Double.MIN_VALUE };
+		gbl_pnlCenter.rowWeights = new double[] { 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE };
 		pnlCenter.setLayout(gbl_pnlCenter);
-		
+
 		JToggleButton tglbtnCrvena = new JToggleButton("Crvena");
 		tglbtnCrvena.addMouseListener(new MouseAdapter() {
 			@Override
@@ -98,7 +98,7 @@ public class FrmTest extends JFrame {
 		gbc_tglbtnCrvena.gridx = 0;
 		gbc_tglbtnCrvena.gridy = 0;
 		pnlCenter.add(tglbtnCrvena, gbc_tglbtnCrvena);
-		
+
 		lblCrvenaBoja = new JLabel("Crvena boja");
 		GridBagConstraints gbc_lblCrvenaBoja = new GridBagConstraints();
 		gbc_lblCrvenaBoja.anchor = GridBagConstraints.EAST;
@@ -106,7 +106,7 @@ public class FrmTest extends JFrame {
 		gbc_lblCrvenaBoja.gridx = 1;
 		gbc_lblCrvenaBoja.gridy = 0;
 		pnlCenter.add(lblCrvenaBoja, gbc_lblCrvenaBoja);
-		
+
 		JToggleButton tglbtnPlava = new JToggleButton("Plava");
 		tglbtnPlava.addMouseListener(new MouseAdapter() {
 			@Override
@@ -117,12 +117,12 @@ public class FrmTest extends JFrame {
 				lblZuta.setForeground(Color.BLACK);
 			}
 		});
-		
+
 		txtUnosBoje = new JTextField();
 		txtUnosBoje.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
-				if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 					dlm.addElement(txtUnosBoje.getText());
 					txtUnosBoje.setText("");
 				}
@@ -142,7 +142,7 @@ public class FrmTest extends JFrame {
 		gbc_tglbtnPlava.gridx = 0;
 		gbc_tglbtnPlava.gridy = 1;
 		pnlCenter.add(tglbtnPlava, gbc_tglbtnPlava);
-		
+
 		lblPlava = new JLabel("Plava boja");
 		GridBagConstraints gbc_lblPlava = new GridBagConstraints();
 		gbc_lblPlava.anchor = GridBagConstraints.WEST;
@@ -150,7 +150,7 @@ public class FrmTest extends JFrame {
 		gbc_lblPlava.gridx = 1;
 		gbc_lblPlava.gridy = 1;
 		pnlCenter.add(lblPlava, gbc_lblPlava);
-		
+
 		JToggleButton tglbtnZuta = new JToggleButton("Zuta");
 		tglbtnZuta.addMouseListener(new MouseAdapter() {
 			@Override
@@ -168,7 +168,7 @@ public class FrmTest extends JFrame {
 		gbc_tglbtnZuta.gridx = 0;
 		gbc_tglbtnZuta.gridy = 2;
 		pnlCenter.add(tglbtnZuta, gbc_tglbtnZuta);
-		
+
 		lblZuta = new JLabel("Zuta boja");
 		GridBagConstraints gbc_lblZuta = new GridBagConstraints();
 		gbc_lblZuta.insets = new Insets(0, 0, 5, 5);
@@ -176,69 +176,109 @@ public class FrmTest extends JFrame {
 		gbc_lblZuta.gridx = 1;
 		gbc_lblZuta.gridy = 2;
 		pnlCenter.add(lblZuta, gbc_lblZuta);
-		
+
 		JComboBox<String> cmbDodatneBoje = new JComboBox<String>();
 		cmbDodatneBoje.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dlm.addElement(cmbDodatneBoje.getSelectedItem().toString());
 			}
 		});
-		cmbDodatneBoje.setModel(new DefaultComboBoxModel(new String[] {"narandzasta", "ljubicasta", "zelena"}));
+		cmbDodatneBoje.setModel(new DefaultComboBoxModel(new String[] { "narandzasta", "ljubicasta", "zelena" }));
 		GridBagConstraints gbc_cmbDodatneBoje = new GridBagConstraints();
 		gbc_cmbDodatneBoje.insets = new Insets(0, 0, 0, 5);
 		gbc_cmbDodatneBoje.fill = GridBagConstraints.HORIZONTAL;
 		gbc_cmbDodatneBoje.gridx = 0;
 		gbc_cmbDodatneBoje.gridy = 3;
 		pnlCenter.add(cmbDodatneBoje, gbc_cmbDodatneBoje);
-		
+
 		JScrollPane scrollPane = new JScrollPane();
 		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
 		gbc_scrollPane.fill = GridBagConstraints.BOTH;
 		gbc_scrollPane.gridx = 2;
 		gbc_scrollPane.gridy = 3;
 		pnlCenter.add(scrollPane, gbc_scrollPane);
-		
+
 		JList<String> listBoje = new JList<String>();
 		scrollPane.setViewportView(listBoje);
 		listBoje.setModel(dlm);
-		
+
 		JPanel pnlNorth = new JPanel();
 		pnlNorth.setBackground(new Color(0, 255, 0));
 		contentPane.add(pnlNorth, BorderLayout.NORTH);
-		
+
 		JLabel lblNaslov = new JLabel("Zadatak 1");
 		lblNaslov.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		pnlNorth.add(lblNaslov);
-		
+
 		JPanel pnlSouth = new JPanel();
 		contentPane.add(pnlSouth, BorderLayout.SOUTH);
-		
+
 		JButton btnKlik = new JButton("Klikni me");
 		btnKlik.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Antistres dugme :)",
-						"Poruka", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Antistres dugme :)", "Poruka", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		pnlSouth.add(btnKlik);
-		
+
 		JButton btnNovaBoja = new JButton("Dodaj  boju");
 		btnNovaBoja.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				dialog.setVisible(true);
-				if(dialog.isOk == true) {
-					dlm.addElement(dialog.txtRed.getText() + " " + dialog.txtGreen.getText() 
-					+ " " + dialog.txtBlue.getText());
-					pnlSouth.setBackground(new Color(
-							Integer.parseInt(dialog.txtRed.getText()),
-							Integer.parseInt(dialog.txtGreen.getText()),
-							Integer.parseInt(dialog.txtBlue.getText())
-							));
+				if (dialog.isOk == true) {
+					dlm.addElement(
+							dialog.txtRed.getText() + " " + dialog.txtGreen.getText() + " " + dialog.txtBlue.getText());
+					pnlSouth.setBackground(new Color(Integer.parseInt(dialog.txtRed.getText()),
+							Integer.parseInt(dialog.txtGreen.getText()), Integer.parseInt(dialog.txtBlue.getText())));
 				}
 			}
 		});
 		pnlSouth.add(btnNovaBoja);
+
+		JButton btnIzmeniBoju = new JButton("Izmeni boju");
+		btnIzmeniBoju.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// prilikom menjanja boje neophodno je da prvo selektujemo element iz liste
+				// a nakon toga popunimo polja dijaloga i otvorimo da bude vidljiv
+				
+				//selektujemo element liste
+				int indexOfSelectedElement = listBoje.getSelectedIndex();
+				System.out.print(indexOfSelectedElement);
+				//ako nista nije selektovano imamo poruku o grešci da boja koja se menja mora biti selektovana
+				if (indexOfSelectedElement < 0) {
+					JOptionPane.showMessageDialog(null, "Mora se selektovati element iz liste", "Poruka",
+							JOptionPane.ERROR_MESSAGE);
+				} else {
+					//preuzimanje vrednosti selektovanog elementa
+					String selectedElement = dlm.getElementAt(indexOfSelectedElement);
+					//splitovanje stringa kako bismo popunili tekstualna polja
+					String[] rgbColors = selectedElement.split(" ");
+
+					DlgTest dlgIzmene = new DlgTest();
+					// prvo popunjavanje pa setVisible(true)!!!
+					dlgIzmene.getTxtRed().setText(rgbColors[0]);
+					dlgIzmene.getTxtGreen().setText(rgbColors[1]);
+					dlgIzmene.getTxtBlue().setText(rgbColors[2]);
+					dlgIzmene.setVisible(true);
+					
+					//prihvatanje izmena
+					if (dlgIzmene.isOk()) {
+						String red = dlgIzmene.getTxtRed().getText();
+						String green = dlgIzmene.getTxtGreen().getText();
+						String blue = dlgIzmene.getTxtBlue().getText();
+
+						String stringColor = red + " " + green + " " + blue;
+						//ova naredba ce izbrisati element na ovom o+indeksu i dodati novu vrednost
+						dlm.setElementAt(stringColor, indexOfSelectedElement);
+
+						Color color = new Color(Integer.parseInt(red), Integer.parseInt(green), Integer.parseInt(blue));
+						pnlCenter.setBackground(color);
+					}
+				}
+			}
+		});
+		pnlSouth.add(btnIzmeniBoju);
 	}
 
 }

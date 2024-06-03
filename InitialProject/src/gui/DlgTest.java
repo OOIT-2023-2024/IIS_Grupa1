@@ -148,4 +148,37 @@ public class DlgTest extends JDialog {
 		}
 	}
 
+	//generisemo get/set jer su property private
+	public JTextField getTxtRed() {
+		return txtRed;
+	}
+
+	public void setTxtRed(JTextField txtRed) {
+		this.txtRed = txtRed;
+	}
+
+	public JTextField getTxtGreen() {
+		return txtGreen;
+	}
+
+	public void setTxtGreen(JTextField txtGreen) {
+		this.txtGreen = txtGreen;
+	}
+
+	public JTextField getTxtBlue() {
+		return txtBlue;
+	}
+
+	public void setTxtBlue(JTextField txtBlue) {
+		this.txtBlue = txtBlue;
+	}
+
+	public boolean isOk() {
+		return isOk;
+	}
+
+	public void setOk(boolean isOk) {
+		this.isOk = isOk;
+	}
+
 }
