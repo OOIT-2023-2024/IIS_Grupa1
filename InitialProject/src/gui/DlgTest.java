@@ -8,6 +8,8 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -115,7 +117,22 @@ public class DlgTest extends JDialog {
 				okButton.addMouseListener(new MouseAdapter() {
 					@Override
 					public void mouseClicked(MouseEvent e) {
-						isOk = true;
+						try {
+							int red = Integer.parseInt(txtRed.getText());
+							int green = Integer.parseInt(txtGreen.getText());
+							int blue = Integer.parseInt(txtBlue.getText());
+							
+							//treba odraditi za sve boje
+							if(red>=0 && red<256) {
+								isOk=true;
+							}else {
+								JOptionPane.showMessageDialog(null, "Vrednosti moraju biti u opsegu",
+										"Poruka", JOptionPane.ERROR_MESSAGE);
+							}
+						} catch (NumberFormatException e1) {
+							JOptionPane.showMessageDialog(null, "Vrednosti moraju biti brojevi",
+									"Poruka", JOptionPane.ERROR_MESSAGE);
+						}
 						setVisible(false);
 					}
 				});
